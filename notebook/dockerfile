@@ -1,0 +1,14 @@
+# imagen oficial
+FROM jupyter/minimal-notebook
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install --no-cache-dir -r requirements.txt
+RUN mkdir -p /app/data
+
+EXPOSE 8888
+
+# ejecuta jupyter notebook al inciar el contenedor
+CMD ["/app/start.sh"]

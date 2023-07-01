@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db:
+    build: ./db
+    volumes:
+      - data_volume:/app/data
+  notebook:
+    build: ./notebook
+    volumes:
+      - data_volume:/app/data
+    ports:
+      - 8888:8888
+volumes:
+  data_volume:
+
